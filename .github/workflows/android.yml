@@ -29,14 +29,16 @@ jobs:
       - name: Compilar APK
         run: |
           dotnet publish MeuCombustivelMAUI.csproj \
-            -f net8.0-android \
+          -f net10.0-android \
             -c Release \
             -p:AndroidPackageFormat=apk
+
 
       - name: Guardar arquivos APK
         uses: actions/upload-artifact@v4
         with:
           name: MeuCombustivel-Android
           path: |
-            bin/Release/net8.0-android/**/*.apk
+            bin/Release/net10.0-android/**/*.apk
           if-no-files-found: error
+
