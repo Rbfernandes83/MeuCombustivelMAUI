@@ -1,0 +1,101 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MeuCombustivelMAUI.MainPage"
+    Title="Meu Combustível"
+    BackgroundColor="#F5F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="15">
+
+            <Label
+                Text="MEU COMBUSTÍVEL"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="#17365D"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Descubra qual combustível compensa mais para seu veículo."
+                FontSize="15"
+                TextColor="#555555"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Marca do veículo"
+                FontAttributes="Bold"
+                TextColor="#222222" />
+
+            <Entry
+                x:Name="MarcaEntry"
+                Placeholder="Ex.: Chevrolet"
+                TextColor="#222222"
+                BackgroundColor="White" />
+
+            <Label
+                Text="Modelo do veículo"
+                FontAttributes="Bold"
+                TextColor="#222222" />
+
+            <Entry
+                x:Name="ModeloEntry"
+                Placeholder="Ex.: Prisma"
+                TextColor="#222222"
+                BackgroundColor="White" />
+
+            <Label
+                Text="Preço da gasolina (R$)"
+                FontAttributes="Bold"
+                TextColor="#222222" />
+
+            <Entry
+                x:Name="GasolinaEntry"
+                Placeholder="Ex.: 6,00"
+                Keyboard="Numeric"
+                TextColor="#222222"
+                BackgroundColor="White" />
+
+            <Label
+                Text="Preço do etanol (R$)"
+                FontAttributes="Bold"
+                TextColor="#222222" />
+
+            <Entry
+                x:Name="EtanolEntry"
+                Placeholder="Ex.: 4,00"
+                Keyboard="Numeric"
+                TextColor="#222222"
+                BackgroundColor="White" />
+
+            <Button
+                Text="Qual compensa mais?"
+                BackgroundColor="#17365D"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="55"
+                Clicked="OnCalcularClicked" />
+
+            <Label
+                x:Name="ResultadoLabel"
+                Text=""
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="#17365D"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Cálculo baseado na referência de 70% do preço da gasolina."
+                FontSize="12"
+                TextColor="#666666"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
