@@ -5,94 +5,170 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MeuCombustivelMAUI.MainPage"
-    Title="Meu Combustível"
-    BackgroundColor="#F5F7FA">
+    BackgroundColor="#F5F7FA"
+    Title="Meu Combustível">
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="25"
-            Spacing="15">
+            Padding="20,25"
+            Spacing="18">
 
-            <Label
-                Text="MEU COMBUSTÍVEL"
-                FontSize="26"
-                FontAttributes="Bold"
-                TextColor="#17365D"
-                HorizontalOptions="Center" />
+            <!-- Cabeçalho -->
+            <Border
+                BackgroundColor="#17365D"
+                StrokeThickness="0"
+                Padding="22"
+                StrokeShape="RoundRectangle 18">
 
-            <Label
-                Text="Descubra qual combustível compensa mais para seu veículo."
-                FontSize="15"
-                TextColor="#555555"
-                HorizontalTextAlignment="Center" />
+                <VerticalStackLayout Spacing="8">
 
-            <Label
-                Text="Marca do veículo"
-                FontAttributes="Bold"
-                TextColor="#222222" />
+                    <Label
+                        Text="MEU COMBUSTÍVEL"
+                        FontSize="25"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        HorizontalTextAlignment="Center" />
 
-            <Entry
-                x:Name="MarcaEntry"
-                Placeholder="Ex.: Chevrolet"
-                TextColor="#222222"
-                BackgroundColor="White" />
+                    <Label
+                        Text="Economize na hora de abastecer"
+                        FontSize="14"
+                        TextColor="#DCE8F5"
+                        HorizontalTextAlignment="Center" />
 
-            <Label
-                Text="Modelo do veículo"
-                FontAttributes="Bold"
-                TextColor="#222222" />
+                </VerticalStackLayout>
+            </Border>
 
-            <Entry
-                x:Name="ModeloEntry"
-                Placeholder="Ex.: Prisma"
-                TextColor="#222222"
-                BackgroundColor="White" />
+            <!-- Dados do veículo -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#E0E6ED"
+                StrokeThickness="1"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
 
-            <Label
-                Text="Preço da gasolina (R$)"
-                FontAttributes="Bold"
-                TextColor="#222222" />
+                <VerticalStackLayout Spacing="12">
 
-            <Entry
-                x:Name="GasolinaEntry"
-                Placeholder="Ex.: 6,00"
-                Keyboard="Numeric"
-                TextColor="#222222"
-                BackgroundColor="White" />
+                    <Label
+                        Text="Dados do veículo"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#17365D" />
 
-            <Label
-                Text="Preço do etanol (R$)"
-                FontAttributes="Bold"
-                TextColor="#222222" />
+                    <Label
+                        Text="Marca do veículo"
+                        TextColor="#344054"
+                        FontAttributes="Bold" />
 
-            <Entry
-                x:Name="EtanolEntry"
-                Placeholder="Ex.: 4,00"
-                Keyboard="Numeric"
-                TextColor="#222222"
-                BackgroundColor="White" />
+                    <Entry
+                        x:Name="MarcaEntry"
+                        Placeholder="Ex.: Chevrolet"
+                        TextColor="#222222"
+                        PlaceholderColor="#8792A2"
+                        BackgroundColor="#F2F5F9" />
 
+                    <Label
+                        Text="Modelo do veículo"
+                        TextColor="#344054"
+                        FontAttributes="Bold" />
+
+                    <Entry
+                        x:Name="ModeloEntry"
+                        Placeholder="Ex.: Prisma"
+                        TextColor="#222222"
+                        PlaceholderColor="#8792A2"
+                        BackgroundColor="#F2F5F9" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Preços dos combustíveis -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#E0E6ED"
+                StrokeThickness="1"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        Text="Preços dos combustíveis"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#17365D" />
+
+                    <Label
+                        Text="Gasolina (R$/litro)"
+                        FontAttributes="Bold"
+                        TextColor="#344054" />
+
+                    <Entry
+                        x:Name="GasolinaEntry"
+                        Placeholder="Ex.: 6,00"
+                        Keyboard="Numeric"
+                        TextColor="#222222"
+                        PlaceholderColor="#8792A2"
+                        BackgroundColor="#F2F5F9" />
+
+                    <Label
+                        Text="Etanol (R$/litro)"
+                        FontAttributes="Bold"
+                        TextColor="#344054" />
+
+                    <Entry
+                        x:Name="EtanolEntry"
+                        Placeholder="Ex.: 4,00"
+                        Keyboard="Numeric"
+                        TextColor="#222222"
+                        PlaceholderColor="#8792A2"
+                        BackgroundColor="#F2F5F9" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botão -->
             <Button
-                Text="Qual compensa mais?"
+                Text="QUAL COMPENSA MAIS?"
+                Clicked="OnCalcularClicked"
                 BackgroundColor="#17365D"
                 TextColor="White"
                 FontAttributes="Bold"
-                CornerRadius="10"
-                HeightRequest="55"
-                Clicked="OnCalcularClicked" />
+                FontSize="16"
+                HeightRequest="56"
+                CornerRadius="14" />
 
-            <Label
-                x:Name="ResultadoLabel"
-                Text=""
-                FontSize="18"
-                FontAttributes="Bold"
-                TextColor="#17365D"
-                HorizontalTextAlignment="Center" />
+            <!-- Resultado -->
+            <Border
+                BackgroundColor="#E7F5EC"
+                Stroke="#B7E2C6"
+                StrokeThickness="1"
+                Padding="18"
+                StrokeShape="RoundRectangle 16">
 
+                <VerticalStackLayout Spacing="8">
+
+                    <Label
+                        Text="Resultado da comparação"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="#167347"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        x:Name="ResultadoLabel"
+                        Text="Preencha os campos e toque no botão para calcular."
+                        FontSize="16"
+                        TextColor="#175C3B"
+                        HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Informação -->
             <Label
-                Text="Cálculo baseado na referência de 70% do preço da gasolina."
+                Text="Comparação baseada na regra de referência de 70%. O consumo real pode variar conforme o veículo."
                 FontSize="12"
-                TextColor="#666666"
+                TextColor="#667085"
                 HorizontalTextAlignment="Center" />
 
         </VerticalStackLayout>
