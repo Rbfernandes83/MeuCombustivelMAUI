@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Baixar arquivos do projeto
+      - name: Baixar arquivos
         uses: actions/checkout@v4
 
-      - name: Preparar Java 17
+      - name: Configurar Java
         uses: actions/setup-java@v4
         with:
           distribution: microsoft
           java-version: '17'
 
-      - name: Instalar .NET 10
+      - name: Configurar .NET 10
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
 
-      - name: Instalar ferramentas MAUI Android
+      - name: Instalar MAUI Android
         run: dotnet workload install maui-android
 
       - name: Compilar APK
@@ -34,10 +34,9 @@ jobs:
             -p:AndroidPackageFormat=apk \
             -p:AndroidKeyStore=false
 
-      - name: Guardar arquivos APK
+      - name: Salvar APK
         uses: actions/upload-artifact@v4
         with:
           name: MeuCombustivel-Android
-          path: |
-            bin/Release/net10.0-android/**/*.apk
+          path: bin/Release/net10.0-android/**/*.apk
           if-no-files-found: error
