@@ -1,6 +1,3 @@
-
-<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,11 +6,8 @@
     Title="Meu Combustível">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="20,25"
-            Spacing="18">
+        <VerticalStackLayout Padding="20,25" Spacing="18">
 
-            <!-- Cabeçalho -->
             <Border
                 BackgroundColor="#17365D"
                 StrokeThickness="0"
@@ -21,7 +15,6 @@
                 StrokeShape="RoundRectangle 18">
 
                 <VerticalStackLayout Spacing="8">
-
                     <Label
                         Text="MEU COMBUSTÍVEL"
                         FontSize="25"
@@ -34,15 +27,12 @@
                         FontSize="14"
                         TextColor="#DCE8F5"
                         HorizontalTextAlignment="Center" />
-
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Dados do veículo -->
             <Border
                 BackgroundColor="White"
                 Stroke="#E0E6ED"
-                StrokeThickness="1"
                 Padding="18"
                 StrokeShape="RoundRectangle 16">
 
@@ -63,7 +53,6 @@
                         x:Name="MarcaEntry"
                         Placeholder="Ex.: Chevrolet"
                         TextColor="#222222"
-                        PlaceholderColor="#8792A2"
                         BackgroundColor="#F2F5F9" />
 
                     <Label
@@ -75,17 +64,14 @@
                         x:Name="ModeloEntry"
                         Placeholder="Ex.: Prisma"
                         TextColor="#222222"
-                        PlaceholderColor="#8792A2"
                         BackgroundColor="#F2F5F9" />
 
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Preços dos combustíveis -->
             <Border
                 BackgroundColor="White"
                 Stroke="#E0E6ED"
-                StrokeThickness="1"
                 Padding="18"
                 StrokeShape="RoundRectangle 16">
 
@@ -107,7 +93,6 @@
                         Placeholder="Ex.: 6,00"
                         Keyboard="Numeric"
                         TextColor="#222222"
-                        PlaceholderColor="#8792A2"
                         BackgroundColor="#F2F5F9" />
 
                     <Label
@@ -120,13 +105,11 @@
                         Placeholder="Ex.: 4,00"
                         Keyboard="Numeric"
                         TextColor="#222222"
-                        PlaceholderColor="#8792A2"
                         BackgroundColor="#F2F5F9" />
 
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Botão -->
             <Button
                 Text="QUAL COMPENSA MAIS?"
                 Clicked="OnCalcularClicked"
@@ -137,11 +120,9 @@
                 HeightRequest="56"
                 CornerRadius="14" />
 
-            <!-- Resultado -->
             <Border
                 BackgroundColor="#E7F5EC"
                 Stroke="#B7E2C6"
-                StrokeThickness="1"
                 Padding="18"
                 StrokeShape="RoundRectangle 16">
 
@@ -164,9 +145,8 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Informação -->
             <Label
-                Text="Comparação baseada na regra de referência de 70%. O consumo real pode variar conforme o veículo."
+                Text="Comparação baseada na referência de 70%. O consumo real pode variar."
                 FontSize="12"
                 TextColor="#667085"
                 HorizontalTextAlignment="Center" />
